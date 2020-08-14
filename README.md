@@ -1,2 +1,2 @@
 # other-team-game
-Parkour Gsmr
+Parkour Game
