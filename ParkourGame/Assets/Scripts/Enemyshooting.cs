@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemyshooting : MonoBehaviour
 {
-    private float shotTimer = 0.0f;
+    public float shotTimer = 0.0f;
     public GameObject enemyBullet; 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class Enemyshooting : MonoBehaviour
     void Update()
     {
         shotTimer += Time.deltaTime;
-        if (shotTimer > 1) { Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+        if (shotTimer > 3) { Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
             shotTimer = 0;
         }
 
