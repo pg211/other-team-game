@@ -17,6 +17,5 @@ public class Enemybulletscript : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(this.gameObject, lifetime);
-        
     }
 }

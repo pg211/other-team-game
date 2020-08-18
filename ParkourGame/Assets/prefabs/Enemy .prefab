@@ -120,5 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7371c68079d4da746ac91c7a0d6105e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotTimer: 2
   enemyBullet: {fileID: 3918462636378326520, guid: f6aa47a6f23d76e48a8ac33a9979c856,
     type: 3}
