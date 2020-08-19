@@ -16,7 +16,7 @@ public class Enemyshooting : MonoBehaviour
     void Update()
     {
         shotTimer += Time.deltaTime;
-        if (shotTimer > 3) { Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+        if (shotTimer > 2) { Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
             shotTimer = 0;
         }
 
