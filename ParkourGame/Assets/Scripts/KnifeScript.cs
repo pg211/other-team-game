@@ -28,7 +28,7 @@ public class KnifeScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("Hit");  //Destroy(enemy);
+            Destroy(other.gameObject);
         }
     }
 }
