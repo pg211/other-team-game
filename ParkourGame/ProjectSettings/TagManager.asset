@@ -8,6 +8,8 @@ TagManager:
   - Melee
   - Lava
   - Ground
+  - Melee
+  - Enemy
   layers:
   - Default
   - TransparentFX
