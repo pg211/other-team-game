@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class disappearoncol : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
 
-        {
-            void OnTriggerEnter(Collider col)
-            {
-                Destroy(col.gameObject);
-            }
-
-        }
     }
+
+       void OnTriggerEnter(Collider other) 
+ { 
+       if(other.gameObject.CompareTag("Ground")||other.gameObject.tag == ("Player")||other.gameObject.tag == ("Lava")||other.gameObject.tag == ("Melee"))
+       { 
+        Destroy(this.gameObject); 
+       } 
+ } 
 }
