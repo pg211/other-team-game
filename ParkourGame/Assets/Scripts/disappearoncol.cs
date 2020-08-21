@@ -17,5 +17,10 @@ public class disappearoncol : MonoBehaviour
        { 
         Destroy(this.gameObject); 
        } 
- } 
-}
+
+       if (other.gameObject.tag == "Player")
+        {
+           Destroy(other.gameObject);//Placeholder
+        }
+    }
+  } 
