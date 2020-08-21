@@ -369,6 +369,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1833887463492512899, guid: e71e26ffc2be2fb40ba3da9e67de0c56,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 1833887464404073076, guid: e71e26ffc2be2fb40ba3da9e67de0c56,
         type: 3}
       propertyPath: m_LocalPosition.x
