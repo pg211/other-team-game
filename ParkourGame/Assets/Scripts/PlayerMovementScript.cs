@@ -4,44 +4,54 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-   public CharacterController controller;
+//   public CharacterController controller;
 
    public float speed = 12f;
-   public float gravity = -9.81f;
    public float jumpHeight = 3f;
-
-   public Transform groundCheck;
-   public float groundDistance = 0.4f;
-   public LayerMask groundMask;
    
+   Rigidbody rigid;
    Vector3 velocity;
-   bool isGrounded;
+   bool isGrounded = true;
+
+   void Start()
+    {
+       rigid = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-       isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+         if(Input.GetKey(KeyCode.W))
+        {
+           transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+          if(Input.GetKey(KeyCode.A))
+        {
+           transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+          if(Input.GetKey(KeyCode.S))
+        {
+           transform.Translate(Vector3.back * speed * Time.deltaTime);
+        }
+          if(Input.GetKey(KeyCode.D))
+        {
+           transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
 
-       if(isGrounded && velocity.y < 0)
+      if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
        {
-          velocity.y = -2f;
+             rigid.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+                    isGrounded = false;
        }
 
-       float x = Input.GetAxis("Horizontal");
-       float z = Input.GetAxis("Vertical");
+    }
 
-       Vector3 move = transform.right * x + transform.forward * z;
-
-       controller.Move(move * speed * Time.deltaTime);
-
-       if(Input.GetButtonDown("Jump") && isGrounded)
-       {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-       }
-
-       velocity.y += gravity * Time.deltaTime;
-
-       controller.Move(velocity * Time.deltaTime);
+      void OnCollisionEnter(Collision other)
+    {
+      if (other.gameObject.tag == "Ground")
+      {
+        isGrounded = true;
+      }
     }
 }
     

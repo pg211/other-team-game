@@ -5,11 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Melee
   - Lava
   - Ground
   - Melee
   - Enemy
+  - Melee
   layers:
   - Default
   - TransparentFX

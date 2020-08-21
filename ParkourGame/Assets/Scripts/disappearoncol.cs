@@ -13,7 +13,7 @@ public class disappearoncol : MonoBehaviour
 
        void OnTriggerEnter(Collider other) 
  { 
-       if(other.gameObject.CompareTag("Ground")||other.gameObject.tag == ("Player")||other.gameObject.tag == ("Lava")||other.gameObject.tag == ("Melee"))
+       if(other.gameObject.CompareTag("Ground")||other.gameObject.tag == ("Player")||other.gameObject.tag == ("Lava"))
        { 
         Destroy(this.gameObject); 
        } 

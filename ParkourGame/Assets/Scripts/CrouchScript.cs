@@ -4,35 +4,18 @@ using UnityEngine;
 
 public class CrouchScript : MonoBehaviour
 {
-    CharacterController playerCol;
-    float originalHeight;
+    float originalHeight = 1;
     public float reducedHeight;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       playerCol = GetComponent<CharacterController>();
-       originalHeight = playerCol.height;
+void Update()
+{
+    Vector3 newScale = new Vector3(transform.localScale.x, originalHeight, transform.localScale.z);
+
+    if (Input.GetKey(KeyCode.LeftControl)) {
+        newScale.y = reducedHeight;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.LeftControl))
-            Crouch();
-        else if(Input.GetKeyUp(KeyCode.LeftControl))
-            Reset();
-    }
-
-    void Crouch()
-    {
-        playerCol.height = reducedHeight;
-    }
-
-    void Reset()
-    {
-        playerCol.height = originalHeight;
-    }
-
+    transform.localScale = newScale;
+}
 }
