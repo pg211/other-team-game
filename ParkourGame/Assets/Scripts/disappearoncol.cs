@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class disappearoncol : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class disappearoncol : MonoBehaviour
 
        if (other.gameObject.tag == "Player")
         {
-           Destroy(other.gameObject);//Placeholder
+           SceneManager.LoadScene("GameOver");
+           Cursor.lockState = CursorLockMode.None; 
         }
     }
   } 
